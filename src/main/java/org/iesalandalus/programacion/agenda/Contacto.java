@@ -23,10 +23,9 @@ private String correo;
 
     public void setNombre(String nombre) 
     {
-        if(nombre==null && nombre.length()<0)
+        if(nombre==null || nombre.length()<0)
             throw new IllegalArgumentException("ERROR: no puedes cambiar el nombre y tampoco puede estar vacio");
-        
-        else this.nombre = nombre;
+            this.nombre = nombre;
     }
 
     public String getTelefono() {
@@ -51,5 +50,10 @@ private String correo;
         else throw new IllegalArgumentException("ERROR: correo no cumple los requisitos");
     }
 
-
+    public Contacto (String nombre, String telefono, String correo)
+    {
+    setNombre(nombre);
+    setTelefono(telefono);
+    setCorreo (correo);
+    }
 }
